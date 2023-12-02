@@ -1,0 +1,593 @@
+
+
+
+
+:root{
+    --color-primary:  #88cfcc;
+    --color-primary-variant: #88becf;
+    --color-bg-1: rgb(5, 5, 5);
+    --color-bg-2: #e9ecef;
+    --color-bg-3:rgb(128, 114, 114);
+    --color-bg-4: #624599;
+    --color-light: #724abd;
+    --color-white:#ffffff;
+    --color-social1:#FCA230;
+    --color-socials2:#FCDA30;
+
+    --container-width-large:88%;
+    --container-width-medium:92%;
+
+    --transition: all 400ms ease;
+
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+
+}
+html {
+    scroll-behavior: smooth;
+
+}
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background: var(--color-bg-3);
+    color:#ddd;
+    line-height: 1.7;
+}
+h1,h2 {
+    line-height: 1.1;
+    font-weight: 400;
+}
+h1 {
+    font-size: 4rem;
+    color:var(--color-bg-3);
+}
+h2 {
+    font-size: 3.5rem;
+}
+
+a {
+    color:var(--color-primary);
+    transition: var(--transition);
+}
+a:hover {
+    color: var(--color-social1);
+}
+.container {
+    width:var(--container-width-large);
+    margin:0 auto;
+    max-width: 2160px;
+}
+img {
+    display: block;
+    object-fit: cover;
+    width:100%;
+
+
+}
+/* ========================================NAV========================*/
+/* Add a black background color to the top navigation bar */
+.topnav {
+    overflow: hidden;
+    background-color: black
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Style the "active" element to highlight the current page */
+  .topnav a.active {
+    background-color: #2196F3;
+    color: white;
+  }
+  
+  /* Style the search box inside the navigation bar */
+  .topnav input[type=text] {
+    float: right;
+    /*padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;*/
+    font-size: 17px;
+  }
+  
+  /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+  @media screen and (max-width: 600px) {
+    .topnav a, .topnav input[type=text] {
+      float: none;
+      display: block;
+      text-align: left;
+      width: 100%;
+      margin: 0;
+      padding: 14px;
+    }
+    .topnav input[type=text] {
+      /*border: 1px solid #ccc;*/
+      background: var(--color-primary-variant);
+    color: blue;
+    border-radius: 6rem;
+    }
+  }
+nav {
+ height: 5rem;
+ width: 100vw;
+ display: grid;
+ place-items: center;
+ position: absolute;
+ top: 0;
+ left: 0;
+ z-index: 99;
+}
+/*nav class on scroll using js*/
+.window-scrolled {
+   /* background-color:var(--color-bg-2);
+    border-bottom: 0.2rem solid ;*/
+    box-shadow: 0 1rem 1 rem black;
+}
+.nav_container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.nav_toggle-btn {
+    display: none;
+
+}
+.nav_logo {
+    width: 10rem;
+    gap: 4rem;
+}
+.nav_links {
+    display: flex;
+    gap: 4rem;
+    
+}
+.nav_socials {
+    display: flex;
+    gap: 1rem;
+
+}
+.nav_socials a {
+    width: 2rem;
+    height: 2rem;
+    background: linear-gradient(var(--color-social1),var(--color-socials2));
+    border-radius: .5rem;
+    color: var(--color-bg-1);
+    display: grid;
+    place-items: center;
+
+}
+.nav_socials a:hover {
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0.4 );
+}
+/* ==================================== header ========================*/
+header {
+    width: 100vw;
+    height: 110vh;
+    position: relative;
+    top: 0;
+    background: linear-gradient(var(--color-bg-1),var(--color-bg-3));
+    overflow: hidden;
+}
+.header_container {
+    display: grid;
+    grid-template-columns: 42% 52%;
+    gap: 6%;
+    margin-top: 10rem;
+    position: relative;
+}
+.header_image-bg {
+    background: var(--color-bg-2);
+    height: 20rem;
+    width: 16rem;
+    position:absolute;
+}
+.header_image-lg {
+    height: 36rem;
+    width: 29rem;
+    position: relative;
+    top: 1rem;
+    left:1rem;
+    filter: saturate(0) brightness(0.3);
+    transition: var(--transition);
+
+   
+}
+
+.header_image-sm {
+    width: 26rem;
+    height: 38rem;
+    overflow: hidden;
+    position: absolute;
+    left: 6rem;
+    top: 6rem;
+    transition: var(--transition);
+
+}
+.header_left:hover .header_image-sm {
+    opacity: 0;
+
+}
+.header_left:hover .header_image-lg {
+    filter: saturate(1) brightness(1);
+    border: 1rem solid rgb(51, 51, 51);
+    top: 0;
+    left: 0;
+}
+.header_head {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+.empty {
+    height: 3.5rem;
+    width: 18rem;
+    background-color:var(--color-bg-2);
+    border-radius: calc(3.5rem/2);
+    margin-bottom: 3.5rem;
+    box-shadow: inset 0 1rem 1rem rgb(52, 52, 52);
+    border: 1px solid var(--color-primary-variant);
+}
+.header_tag {
+    color: var(--color-primary);
+}
+.header_right p {
+    
+    margin-top: 2rem;
+    width:45%;
+}
+/* only for mobiles and tablets*/
+.header_btn-md {
+    display:none;
+}
+
+.header_frames {
+    position: absolute;
+    top: 88vh;
+    right: 44rem;
+    transition: var(--transition);
+
+}
+.header_frame {
+    width: 14rem;
+    border: 0.4rem solid black;
+    box-shadow: 0 0 4rem rgba(0, 0, 0.3 );
+    position: absolute;
+    transform: rotate(-10deg);
+    transform-origin: bottom left;
+    transition: var(--transition);
+
+}
+
+.header_frame:nth-child(2) {
+    transform: rotate(20deg);
+    top: -2rem;
+    left: 2rem;
+}
+.header_frames:hover .hover_frame {
+     transform: rotate(0);
+}
+.header_frames:hover .header_frame:nth-child(2) {
+    top: 0;
+    left: 5rem;
+}
+
+/* styles for contact button*/
+.contact_btn {
+    color:var(--);
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: var(--transition);
+
+}
+.contact-text{
+    text-transform: T;
+}
+.header_btn {
+    background-color: linear-gradient(-30deg ,var(--color-bg-1),var(--color-bg-2));
+    position: absolute;
+    right: 6%;
+    bottom: -3rem;
+}
+.header_btn:hover {
+    box-shadow: 0 2rem 2rem rgba(0, 0, 0.3 );
+    transform: translateY(-1rem);
+    color:#FCA230;
+}
+.contact_btn i {
+    font-size: 3.5rem;
+    position: absolute;
+    color: #ffffff;
+    
+}
+.contact_btn p {
+    font-size: 1rem;
+    font-weight: 600;
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    animation: spinText 30s linear infinite;
+    background-color: rgb(41, 39, 39);
+    border-radius: 50%;
+}
+.contact_btn p span {
+    position: absolute;
+    transform-origin: 0.3rem 5rem;
+}
+@keyframes spinText {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/*===============ABOUT=====================*/
+#about {
+    margin-top: 18rem;
+}
+.about_container {
+    display: grid;
+    grid-template-columns: 10rem 26rem auto;
+    gap: 3rem;
+    position: relative;
+
+}
+.about_title {
+    position: absolute;
+    top: -7rem;
+    z-index: 1;
+}
+.about_title2{
+    color:rgb(28, 28, 28);
+}
+.about_image {
+    position: relative;
+}
+.about_image-bg {
+    width: 16rem;
+    height: 24rem;
+    position: absolute;
+    bottom: 0;
+    /*background:rgb(132, 127, 48);*/
+    size: 16px;
+}
+.about_image-lg {
+    position: relative;
+    left: 1rem;
+    bottom: 1rem;
+    filter: saturate(0) brightness(0.3);
+    transition: 500ms ease;
+}
+
+.about_image-sm {
+    position:absolute;
+    top: 3rem;
+    left: 8rem;
+    height: 22rem;
+    -webkit-box-direction: 22rem;
+    overflow: hidden;
+    box-shadow: 1rem 1rem 4rem rgba(0, 0, 0.3 );
+    transition: 500ms ease;
+    z-index: -1;
+}
+
+.about_image:hover .about_image-sm {
+    opacity: 0;
+}
+.about_image:hover .about_image-lg {
+    filter: saturate(1) brightness(1);
+    box-shadow: 0 3rem 3rem rgba(0, 0, 0,0.2 );
+    border: 1rem solid rgb(209, 146, 0);
+    left: 0;
+bottom: 0;
+}
+.about_right {
+    margin-left: -2rem;
+    margin-right: -35rem;
+    margin-top: 6rem;
+}
+    
+    .about_right p {
+        margin: 0 4rem 1.5rem 0;
+    }
+
+    
+
+    /*=======================ACHEIVEMENTS===========================*/
+    #Acheivements {
+        margin-top: 40 rem;
+        
+     }
+    .Acheivements_title2{
+        color:rgb(28, 28, 28);
+    }
+     
+    .Acheivements_head {
+      display: flex;
+      
+      margin-top: 9rem;
+    } 
+  
+    .Acheivements_container p {
+      width: 45 rem;
+    }
+    .Acheivements_container{
+        background-image: url(images/black.jpg);
+    }
+  
+    .swiper-wrapper {
+      margin-top: 5rem;
+      height: 37rem;
+      padding-bottom:5rem;
+    }
+    .Acheivements-wrap{
+        display: inline-flex;
+    }
+  @media screen and (min-widt:768px) {
+    .Acheivements-wrap{
+        flex-direction: column;
+    }
+  } 
+    
+  .Acheivements_body{
+    margin-left: 122px;
+   
+  }
+    .swiper-slide {
+  
+      border:0.5rem solid var(--color-bg-4);
+      height: fit-content;
+      max-height: 36rem;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+  
+    .swiper-slide:hover{
+      box-shadow: 0 3rem 3rem rgba(0, 0, 0, 0.4);
+   }
+  
+   .swiper-slide img {
+      filter: saturate(0);
+      transition: var(--transition);
+   }
+  
+   .swiper-slide:hover img {
+      filter: saturate(1);
+   }
+  
+   .swiper-pagination-bullet {
+      background: var(--color-primary);
+   }
+   
+  .container {
+    padding: 40px 16px;
+    max-width: 1203px;
+  }
+  .Acheivements_image{
+    position:absolute;
+    top: 16rem;
+    left: 8rem;
+    height: 22rem;
+    -webkit-box-direction: 22rem;
+    overflow: hidden;
+    box-shadow: 1rem 1rem 4rem rgba(0, 0, 0.3 );
+    transition: 500ms ease;
+    z-index: -1;
+  }
+/*============================== END OF GALLERY===============================*/ 
+#skills {
+    margin-top:10rem;
+    background-color:linear-gradient(var(--color-bg-1),var(--color-bg-2));
+   
+}
+
+.skills_container {
+       position:relative;
+     
+}
+
+/*.skills_empty {
+    width: 25 rem;
+    position: absolute;
+    right: 14rem;
+    top: 0;
+}*/
+
+
+.skills_head {
+   display:inline-block;
+   justify-content: right;
+   /* align-items: center; */
+   padding-bottom: 2px;
+   
+}
+
+.skills_head > p {
+   width: 45rem;
+text-align: left;
+}
+
+.skills_btn {
+   color: var(--color-primary-variant);
+   text-align: right;
+   display: grid;
+   grid-template-rows: 50fr; 
+}
+ 
+.skills_btn:hover{
+   transform: translateY(-1rem);
+   /* text-align: right; */
+}
+
+
+.skills_gallery{
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   /*margin-top: 5rem;*/
+   gap: 3rem;
+   
+    margin-top: -2rem;
+
+}
+
+.skills_gallery article {
+   border: 0.5rem solid var(--color-bg-4);
+   transition: var(--transition);
+}
+.skills_gallery article:nth-child(3){
+   grid-row: 1/3;
+}
+
+.skills_gallery article:nth-child(4) {
+   grid-column: 2/4;
+   grid-row: 2/3;
+
+}
+
+.skills_gallery article img {
+   height: 100%;
+   filter: saturate(0);
+   transition: var(--transition);
+}
+
+.skills_gallery article:hover img {
+   filter: saturate(1);
+}
+
+.skills_gallery article:hover {
+   box-shadow: 0 4rem 4rem rgba(0, 0, 0, 0.5);
+}
+
+/*====================END OF skills========================*/
+.footer_container{
+    background-color:rgb(34, 33, 33)
+}
+/*=========================FOOTER==============================*/
